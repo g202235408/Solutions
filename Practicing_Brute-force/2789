@@ -1,0 +1,20 @@
+from itertools import combinations
+
+n, m = map(int, input().split())
+
+
+def find__sums(arr, k):
+    sums = set()
+    for subset in combinations(arr, k):
+        sums.add(sum(subset))
+    return sorted(sums)[len(sums) - 1]
+
+
+if (n <= 100 and n >= 3):
+    num = [int(x) for x in input().split()]
+
+    if (len(num) == n):
+        print(find__sums(num, 3))
+
+    else:
+        print("x")
